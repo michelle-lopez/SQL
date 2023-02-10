@@ -1,0 +1,35 @@
+-- Create a drug store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, section TEXT, price INTEGER, quantity INTEGER)
+;
+
+INSERT INTO store VALUES
+(1, "shampoo", "hair", 7.99, 70),
+(2, "conditioner", "hair", 7.99, 65),
+(3, "body wash", "body", 5.99, 80),
+(4, "body lotion", "body", 8.99, 85),
+(5, "hair brush", "hair", 2.99, 100),
+(6, "bath pouf", "body", 1.99, 100),
+(7, "Bar soap", "body", 4.99, 100),
+(8, "face wash", "skin care", 5.99, 80),
+(9, "acne wash", "skin care", 6.99, 95),
+(10, "makeup remover", "beauty", 9.99, 78),
+(11, "exfoliator scrub", "skin care", 11.99, 67),
+(12, "mascara", "beauty", 7.99, 80),
+(13, "sun screen", "skin care", 5.99, 70),
+(14, "pain kiler", "pharmacy", 8.99, 150),
+(15, "anti acid", "pharmacy", 7.99, 150);
+
+--Display the database ordered by price.
+SELECT * from store
+ORDER BY price desc;
+
+--What is the average price of items in the skin care section?
+SELECT AVG(price) "avg skincare item price"
+FROM store
+where section="skin care";
+
+--What is the quantity of body care items in store?
+SELECT SUM(quantity) "quantity of body care items in store"
+FROM store
+where section="body";

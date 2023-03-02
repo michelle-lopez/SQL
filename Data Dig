@@ -75,6 +75,6 @@ SELECT body, mass,
     END as "Mass_Relative_to_Earth"
 FROM solar_system_objects;
 
-/* What objects are satallite oj Jupiter and with less mass than Earth? */ 
+/* What objects are satallite of Jupiter and with less mass than Earth? */ 
 SELECT body FROM solar_system_objects
 WHERE type_of_object = "satellite of Jupiter" AND mass < "5973.6";
